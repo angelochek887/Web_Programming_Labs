@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сема Ангеліна - Лабораторна №6</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header id="site-header">
+    <h1>Сема Ангеліна</h1>
+    <p>Студентка спеціальності «Комп’ютерні науки»</p>
+    <img src="../images/me.png" alt="Фото студентки" loading="lazy">
+
+    <nav>
+      <a href="#about">Про мене</a>
+      <a href="#hobbies">Хобі</a>
+      <a href="#forms">Форми</a>
+      <a href="#extra-info">Додатково</a>
+      <a href="#contacts">Контакти</a>
+    </nav>
+  </header>
+
+  <div class="layout-grid">
+    <main id="content">
+
+      <section id="about" class="card">
+        <h2>Про мене</h2>
+        <p>Я навчаюся в університеті на спеціальності «Комп’ютерні науки».</p>
+      </section>
+
+      <section id="hobbies" class="card">
+        <h2>Мої хобі</h2>
+        <p>Люблю подорожувати, але тільки це почала робити</p>
+
+        <div class="photo-row">
+          <figure>
+            <img 
+              src="../images/Budapest.jpg" 
+              srcset="../images/Budapest.jpg 400w, 
+                      ../images/Budapest.jpg 800w, 
+                      ../images/Budapest.jpg 1200w"
+              sizes="(max-width: 768px) 90vw, (min-width: 768px) 50vw"
+              alt="Подорож до Будапешту" 
+              loading="lazy">
+            <figcaption>Подорож до Будапешту</figcaption>
+          </figure>
+
+          <figure>
+            <img 
+              src="../images/Lviv.jpg" 
+              srcset="../images/Lviv.jpg 400w, 
+                      ../images/Lviv.jpg 800w, 
+                      ../images/Lviv.jpg 1200w"
+              sizes="(max-width: 768px) 90vw, (min-width: 768px) 50vw"
+              alt="Подорож до Львову" 
+              loading="lazy">
+            <figcaption>Подорож до Львову</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="forms" class="card">
+        <h2>Форма авторизації</h2>
+        <form id="loginForm" action="#" method="post">
+          <label for="email">Електронна адреса:</label>
+          <input type="email" id="email" name="email" placeholder="name@example.com" required>
+
+          <label for="password">Пароль:</label>
+          <input type="password" id="password" name="password" required>
+
+          <label><input type="checkbox" name="remember"> Запам’ятати мене</label>
+
+          <input type="submit" value="Увійти">
+          <input type="reset" value="Очистити">
+        </form>
+
+        <h2>Форма реєстрації</h2>
+        <form id="regForm" action="#" method="post">
+          <label for="surname">Прізвище:</label>
+          <input type="text" id="surname" name="surname" required>
+
+          <label for="name">Ім’я:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email2">Електронна адреса:</label>
+          <input type="email" id="email2" name="email2" placeholder="name@example.com" required>
+
+          <label for="about-yourself">Коротко про себе:</label>
+          <textarea id="about-yourself" name="about" maxlength="300" placeholder="До 300 символів"></textarea>
+
+          <label for="specialty">Спеціальність:</label>
+          <select id="specialty" name="specialty">
+            <option value="">Оберіть</option>
+            <option value="cs">Комп’ютерні науки</option>
+            <option value="it">Інформаційні технології</option>
+          </select>
+
+          <label><input type="checkbox" name="agree" required> Погоджуюсь з умовами</label>
+
+          <input type="submit" value="Зареєструватися">
+          <input type="reset" value="Очистити">
+        </form>
+      </section>
+
+    </main>
+
+    <aside id="extra-info" class="card">
+      <h2>Додаткова інформація</h2>
+      <p><em>Моя улюблена цитата:</em></p>
+      <q>«Найкраща помста – великий успіх»</q>
+      <p>Мої соціальні мережі:</p>
+      <p>
+        <a href="https://t.me/Angelochek887" target="_blank">Telegram</a><br>
+        Discord: angelochek887<br>
+        <a href="https://steamcommunity.com/profiles/76561199098889023/" target="_blank">Steam</a>
+      </p>
+    </aside>
+  </div> <footer id="contacts">
+    <p>Контакти: <a href="mailto:sema.anhelina@student.sumdu.edu.ua">sema.anhelina@student.sumdu.edu.ua</a></p>
+    <p>© 2025 Сема Ангеліна</p>
+  </footer>
+
+</body>
+</html>

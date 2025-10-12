@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Сема Ангеліна - Форми</title>
+</head>
+<body>
+  <header>
+    <h1>Сема Ангеліна</h1>
+    <p>Студентка спеціальності «Комп’ютерні науки»</p>
+    <nav>
+      <a href="#loginForm">Авторизація</a> |
+      <a href="#regForm">Реєстрація</a>
+    </nav>
+  </header>
+
+  <main>
+    <article id="about">
+      <h2>Про мене</h2>
+      <p>Я навчаюся в університеті на спеціальності «Комп’ютерні науки».</p>
+    </article>
+
+    <section>
+      <h2>Форма авторизації</h2>
+      <form id="loginForm" method="post" action="#">
+        <label for="loginEmail">Електронна адреса:</label>
+        <input type="email" id="loginEmail" name="loginEmail" placeholder="name@example.com" required><br><br>
+
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="checkbox" id="remember" name="remember">
+        <label for="remember">Запам’ятати мене</label><br><br>
+
+        <button type="submit">Увійти</button>
+        <button type="reset">Очистити</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Форма реєстрації</h2>
+      <form id="regForm" method="post" action="#">
+        <label for="lastName">Прізвище:</label>
+        <input type="text" id="lastName" name="lastName" required><br><br>
+
+        <label for="firstName">Ім’я:</label>
+        <input type="text" id="firstName" name="firstName" required><br><br>
+
+        <label for="middleName">По батькові:</label>
+        <input type="text" id="middleName" name="middleName"><br><br>
+
+        <label for="birthdate">Дата народження:</label>
+        <input type="date" id="birthdate" name="birthdate"><br><br>
+
+        <label for="email">Електронна адреса:</label>
+        <input type="email" id="email" name="email" placeholder="name@example.com" required><br><br>
+
+        <label for="aboutText">Коротко про себе:</label><br>
+        <textarea id="aboutText" name="aboutText" maxlength="300" placeholder="До 300 символів"></textarea><br>
+        <small id="charCount">Символів: 0 з 300</small><br><br>
+
+        <p>Стать:</p>
+        <input type="radio" id="male" name="gender" value="Чоловіча">
+        <label for="male">Чоловіча</label>
+
+        <input type="radio" id="female" name="gender" value="Жіноча">
+        <label for="female">Жіноча</label>
+
+        <input type="radio" id="noanswer" name="gender" value="Не хочу вказувати" checked>
+        <label for="noanswer">Не хочу вказувати</label><br><br>
+
+        <label for="specialty">Спеціальність:</label>
+        <select id="specialty" name="specialty">
+          <option value="in">ІН</option>
+          <option value="it">ІТ</option>
+          <option value="cs">Комп’ютерні науки</option>
+          <option value="other">Інше</option>
+        </select><br><br>
+
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">Погоджуюся з умовами</label><br><br>
+
+        <button type="submit">Зареєструватися</button>
+        <button type="reset">Очистити</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Контакти: <a href="mailto:sema.anhelina@student.sumdu.edu.ua">sema.anhelina@student.sumdu.edu.ua</a></p>
+    <p>&copy; 2025 Сема Ангеліна</p>
+  </footer>
+
+  <script>
+    // Лічильник символів
+    const aboutField = document.getElementById("aboutText");
+    const counter = document.getElementById("charCount");
+    aboutField.addEventListener("input", () => {
+      const count = aboutField.value.length;
+      counter.textContent = "Символів: " + count + " з 300";
+    });
+
+    // Обробка форми реєстрації
+    document.getElementById("regForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const lastName = document.getElementById("lastName").value;
+      const firstName = document.getElementById("firstName").value;
+      const email = document.getElementById("email").value;
+      const specialtySelect = document.getElementById("specialty");
+      const specialtyText = specialtySelect.options[specialtySelect.selectedIndex].text;
+
+      const result =
+        "Реєстраційні дані прийнято. Прізвище: " + lastName +
+        ", Ім’я: " + firstName +
+        ", Email: " + email +
+        ", Спеціальність: " + specialtyText + ".";
+
+      const output = document.createElement("p");
+      output.textContent = result;
+      output.style.color = "green";
+      output.style.fontWeight = "bold";
+      document.getElementById("regForm").after(output);
+    });
+  </script>
+</body>
+</html>

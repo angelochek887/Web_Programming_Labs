@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Мій блог</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Мій блог</h1>
+  </header>
+
+  <div id="toolbar">
+    <div class="search-group">
+      <input type="text" id="searchInput" placeholder="Пошук за заголовком..." aria-label="Пошук за назвою">
+      <button id="searchBtn">Пошук</button>
+    </div>
+
+    <select id="sortSel" aria-label="Сортування">
+      <option value="new">Новіші</option>
+      <option value="old">Старіші</option>
+      <option value="title">За назвою</option>
+    </select>
+
+    <span id="count" aria-live="polite"></span>
+    <div id="category-buttons"></div>
+  </div>
+
+  <main>
+    <section id="blog-posts"></section>
+  </main>
+
+  <script src="../script/script.js" defer></script>
+</body>
+</html>

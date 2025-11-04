@@ -1,0 +1,88 @@
+/* Базові стилі для сторінки */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Стилі для групи полів */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    box-sizing: border-box; /* padding не змінював ширину */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Стиль для поля, яке пройшло валідацію */
+.form-group input.valid {
+    border-color: green;
+}
+
+/* Стиль для поля з помилкою */
+.form-group input.invalid {
+    border-color: red;
+    background-color: #fff8f8;
+}
+
+/* Повідомлення про помилку початково приховане */
+.error-message {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: none; /* Приховуємо */
+}
+
+/* * Повідомлення про помилку */
+.error-message.visible {
+    display: block;
+}
+
+/* Стилі для кнопок */
+.btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Приховує елемент привітання */
+.hidden {
+    display: none;
+}

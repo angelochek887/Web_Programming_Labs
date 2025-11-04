@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Іван Шевченко",
+    "email": "ivan.shevchenko@example.com"
+  },
+  {
+    "id": 2,
+    "name": "Олена Бузкова",
+    "email": "olena@example.com"
+  },
+  {
+    "id": 3,
+    "name": "Петро Коваленко",
+    "email": "petro.koval@example.com"
+  },
+  {
+    "id": 4,
+    "name": "Марія Гончар",
+    "email": "maria.honchar@example.com"
+  }
+]

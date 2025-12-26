@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 14: Accessibility & Validation</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="./main.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Мій сайт</h1>
+        <button id="menuButton" class="hidden" aria-label="Відкрити меню навігації">☰</button>
+    </header>
+
+    <div class="container">
+        <nav id="sidebar" aria-label="Головне меню">
+            <ul>
+                <li><a href="#">Головна</a></li>
+                <li><a href="#">Про нас</a></li>
+                <li><a href="#">Контакти</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section aria-labelledby="form-title">
+                <h2 id="form-title">Зворотний зв'язок</h2>
+                <p>Будь ласка, заповніть форму. Усі поля обов'язкові.</p>
+
+                <form id="contactForm" novalidate>
+                    
+                    <div class="form-group">
+                        <label for="username">Ваше ім'я:</label>
+                        <input type="text" id="username" name="username" aria-required="true" aria-invalid="false">
+                        <span id="errUsername" class="error-message hidden" aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" aria-required="true" aria-invalid="false" aria-describedby="emailHint">
+                        <small id="emailHint" class="hint">Наприклад: user@example.com</small>
+                        <span id="errEmail" class="error-message hidden" aria-live="polite"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Повідомлення:</label>
+                        <textarea id="message" name="message" rows="4" aria-required="true" aria-invalid="false"></textarea>
+                        <span id="errMessage" class="error-message hidden" aria-live="polite"></span>
+                    </div>
+
+                    <button type="submit">Надіслати</button>
+                </form>
+
+                <div id="formStatus" role="status" aria-live="assertive" class="status-message"></div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
